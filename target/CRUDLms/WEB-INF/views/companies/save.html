@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>save new company</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<form action="#"
+      th:method="post" th:action="@{/companies/saveCompany}" th:object="${newCompany}">
+
+    <label for="name">Company_name</label>
+    <input id="name" th:field="${newCompany.companyName}" placeholder="Name">
+    <br><br>
+
+    <label for="locatedCountry">Company_country</label>
+    <input id="locatedCountry" th:field="${newCompany.locatedCountry}" placeholder="Located Country ">
+    <br><br>
+<div >
+   <a th:href="@{/companies/saveCompany}">
+     <button class="btn btn-outline-success" >Save</button>
+    </a>
+</div>
+
+</form>
+
+<div>
+    <a th:href="@{/companies}">
+        <button type="button" class="btn btn-outline-secondary">Go back</button>
+    </a>
+</div>
+</body>
+</html>

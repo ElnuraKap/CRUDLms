@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update a Company</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+<form th:method="POST" th:action="@{/companies/{id}(id=${company.id})}" th:object="${company}">
+    <label for="name">Company_name</label>
+    <input id="name" type="text" th:field="${company.companyName}" placeholder="Name">
+    <br><br>
+    <label for="country">company_country</label>
+    <input id="country" type="text" th:field="${company.locatedCountry}" placeholder="Country">
+    <br><br>
+    <div >
+        <a th:href="@{/companies/{id}/edit}">
+            <button class="btn btn-outline-dark">Edit</button>
+        </a>
+    </div>
+
+    <div >
+        <a th:href="@{/companies}">
+            <button  class="btn btn-outline-secondary">Go back</button>
+        </a>
+    </div>
+
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
